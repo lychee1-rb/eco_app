@@ -1,11 +1,175 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
-<%= link_to image_tag('setsuden_off.png',width: "300px"), "http://localhost:3000/welcome/show" %>
+<h1>With Eco Life</h1>
+<p>あなたの今日のエコ活動をクリックしてください</p>
+<div class="cl1">
+<button id="btn_count_up1">
+<%= image_tag('setsuden_off.png',width: "300px") %>
 節電
-<%= link_to image_tag('gomi_bunbetsu.png',width: "300px"), "http://localhost:3000/welcome/show" %>
+</button>
+<div id="output1">
+</div>
+<div id="output2">
+</div>
+<div id="output3">
+</div>
+</div>
+
+<div class="cl2">
+<button id="btn_count_up2">
+<%= image_tag('gomi_bunbetsu.png',width: "300px") %>
 分別
-<%= link_to image_tag('water-bottle.png',width: "250px",height: "300px"), "http://localhost:3000/welcome/show" %>
+</button>
+<div id="output4">
+</div>
+<div id="output5">
+</div>
+<div id="output6">
+</div>
+</div>
+
+<div class="cl3">
+<button id="btn_count_up3">
+<%= image_tag('water-bottle.png',width: "250px",height: "300px") %>
 水筒
-<%= link_to image_tag('watermark.jpg',width: "300px"), "http://localhost:3000/welcome/show" %>
+</button>
+<div id="output7">
+</div>
+<div id="output8">
+</div>
+<div id="output9">
+</div>
+</div>
+
+<div class="cl4">
+<button id="btn_count_up4">
+<%= image_tag('watermark.jpg',width: "300px") %>
 マイバッグ
-</p>
+</button>
+<div id="output10">
+</div>
+<div id="output11">
+</div>
+<div id="output12">
+</div>
+</div>
+
+
+<div id="disp_count">0</div>
+<!-- <input type="button" value="カウントアップ" id="btn_count_up" /> -->
+<input type="button" value="リセット" id="btn_reset" />
+
+<script type="text/javascript">
+window.onload = function() {
+
+     // オブジェクトと変数の準備
+     var count_disp = document.getElementById("disp_count");
+
+     var count_up_btn1 = document.getElementById("btn_count_up1");
+     var count_up_btn2 = document.getElementById("btn_count_up2");
+     var count_up_btn3 = document.getElementById("btn_count_up3");
+     var count_up_btn4 = document.getElementById("btn_count_up4");
+     var count_value = 0;
+     var count_value1 = 0;
+     var count_value2 = 0;
+     var count_value3 = 0;
+     var count_value4 = 0;
+    
+     var reset_btn = document.getElementById("btn_reset");
+
+     // カウントアップボタンクリック処理
+     count_up_btn1.onclick = function (){
+        count_value += 1;
+        count_value1 += 1;
+        //count_disp.innerHTML = count_value1;
+        target1 = document.getElementById("output1");
+        target2 = document.getElementById("output2");
+        target3 = document.getElementById("output3");
+        if(count_value1 == 1){
+            target1.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
+        }
+        else if(count_value1 == 2){
+            target2.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
+        }
+        else if(count_value1 == 3){
+            target3.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
+        }
+     };
+     count_up_btn2.onclick = function (){
+        count_value += 1;
+        count_value2 += 1;
+        count_disp.innerHTML = count_value2;
+        target4 = document.getElementById("output4");
+        target5 = document.getElementById("output5");
+        target6 = document.getElementById("output6");
+        if(count_value2 == 1){
+            target4.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
+        }
+        else if(count_value2 == 2){
+            target5.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
+        }
+        else if(count_value2 == 3){
+            target6.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
+        }
+     };
+     
+     count_up_btn3.onclick = function (){
+        count_value += 1;
+        count_value3 += 1;
+        count_disp.innerHTML = count_value3;
+        target7 = document.getElementById("output7");
+        target8 = document.getElementById("output8");
+        target9 = document.getElementById("output9");
+        if(count_value3 == 1){
+            target7.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
+        }
+        else if(count_value3 == 2){
+            target8.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
+        }
+        else if(count_value3 == 3){
+            target9.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
+        }
+     };
+
+     count_up_btn4.onclick = function (){
+        count_value += 1;
+        count_value4 += 1;
+        count_disp.innerHTML = count_value4;
+        target10 = document.getElementById("output10");
+        target11 = document.getElementById("output11");
+        target12 = document.getElementById("output12");
+        if(count_value4 == 1){
+            target10.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
+        }
+        else if(count_value4 == 2){
+            target11.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
+        }
+        else if(count_value4 == 3){
+            target12.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
+        }
+
+        if(count_value == 12){
+            window.location.href = 'http://localhost:3000/welcome/show'; // 通常の遷移
+        }
+     };
+
+     // カウントアップボタンのマウスダウン処理
+     count_up_btn.onmousedown = function() {
+          count_up_btn.style.backgroundColor = "#00FF00";
+     }
+     // カウントアップボタンのマウスアップ処理
+     count_up_btn.onmouseup = function() {
+          count_up_btn.style.backgroundColor = "";
+     }
+     // リセットボタンのクリック処理
+     reset_btn.onclick = function (){
+          count_value = 0; count_disp.innerHTML = count_value;
+     }
+     // リセットボタンのマウスダウン処理
+     reset_btn.onmousedown = function() {
+          reset_btn.style.backgroundColor = "#00FF00";
+     }
+     // リセットボタンのマウスアップ処理
+     reset_btn.onmouseup = function() {
+          reset_btn.style.backgroundColor = "";
+     }
+}; 
+</script>

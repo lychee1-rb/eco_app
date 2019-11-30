@@ -1,3 +1,93 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+    max-width: 80%;
+    
+    margin-left:auto;
+    margin-right:auto;
+}
+
+button {
+    display:  inline-block;    
+}
+
+h1 {
+    text-align: center;
+}
+p {
+    text-align: center;
+}
+
+.cl1 {
+    margin-bottom: 20px;
+}
+.cl2 {
+    margin-bottom: 20px;
+}
+.cl3 {
+    margin-bottom: 20px;
+}
+.cl4 {
+    margin-bottom: 20px;
+}
+
+#output1 {
+    display:  inline-block; 
+}
+
+#output2 {
+    display:  inline-block; 
+}
+
+#output3 {
+    display:  inline-block; 
+}
+
+#output4 {
+    display:  inline-block; 
+}
+
+#output5 {
+    display:  inline-block; 
+}
+#output6 {
+    display:  inline-block; 
+}
+
+#output7 {
+    display:  inline-block; 
+}
+#output8 {
+    display:  inline-block; 
+}
+#output9 {
+    display:  inline-block; 
+}
+#output10 {
+    display:  inline-block; 
+}
+#output11 {
+    display:  inline-block; 
+}
+#output12 {
+    display:  inline-block; 
+}
+
+.anime_test {
+    display:  block;                /* ブロック要素にする */
+    margin: 0 auto;                 /* 要素中央揃え */
+    position:  relative;            /* 位置指定 */
+    animation: anime1 1s ease;      /* アニメーション指定 */
+}
+
+@keyframes anime1 {
+    0% {
+        opacity:  0;                /* 透明度指定 */
+        top: 50px;                  /* 位置指定 */
+    }
+    100% {
+        opacity:  1;                /* 透明度指定 */
+        top: 0;                     /* 位置指定 */
+    }
+}
