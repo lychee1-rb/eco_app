@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'welcome/index'
+  root  'welcome#index'
+  get 'welcome/index'
   get 'welcome/show'
   get 'welcome/second'
   get "welcome/count"
