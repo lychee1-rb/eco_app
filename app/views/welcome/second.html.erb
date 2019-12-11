@@ -1,9 +1,9 @@
-<h1>With Eco Life -1st Stage -</h1>
+<h1>With Eco Life -2nd Stage -</h1>
 <p>あなたの今日のエコ活動をクリックしてください</p>
 <div class="cl1">
 <button id="btn_count_up1">
-<%= image_tag('setsuden_off.png',width: "300px") %>
-節電
+<%= image_tag('2308.jpg',width: "300px") %>
+食べ物を捨てない
 </button>
 <div id="output1">
 </div>
@@ -15,8 +15,9 @@
 
 <div class="cl2">
 <button id="btn_count_up2">
-<%= image_tag('gomi_bunbetsu.png',width: "300px") %>
-分別
+<%= image_tag('20160607_issa_03.jpg',width: "300px") %>
+ガソリンは使わず、
+自転車で移動する
 </button>
 <div id="output4">
 </div>
@@ -28,8 +29,9 @@
 
 <div class="cl3">
 <button id="btn_count_up3">
-<%= image_tag('water-bottle.png',width: "250px",height: "300px") %>
-マイボトル
+<%= image_tag('senkyo_enzetsu_man.png',width: "250px",height: "300px") %>
+温暖化対策を
+積極的に進める議員に投票する
 </button>
 <div id="output7">
 </div>
@@ -39,26 +41,10 @@
 </div>
 </div>
 
-<div class="cl4">
-<button id="btn_count_up4">
-<%= image_tag('watermark.jpg',width: "300px") %>
-マイバッグ
-</button>
-<div id="output10">
-</div>
-<div id="output11">
-</div>
-<div id="output12">
-</div>
-</div>
-
-
 
 
 <script type="text/javascript">
-var count_value = 0;
-
-window.onload = function btnCountUp() {
+window.onload = function() {
 
      // オブジェクトと変数の準備
      var count_up_btn1 = document.getElementById("btn_count_up1");
@@ -73,157 +59,85 @@ window.onload = function btnCountUp() {
 
      // カウントアップボタンクリック処理
      count_up_btn1.onclick = function (){
+        count_value += 1;
         count_value1 += 1;
         target1 = document.getElementById("output1");
         target2 = document.getElementById("output2");
         target3 = document.getElementById("output3");
-        
         if(count_value1 == 1){
             target1.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
-            count_value += 1;
         }
         else if(count_value1 == 2){
             target2.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
-            count_value += 1;
         }
         else if(count_value1 == 3){
             target3.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
-            count_value += 1;
-            
-        }
-        else if(count_value1 >= 4){
-            count_value += 0;
         }
         if(count_value == 12){
             window.location.href = 'http://localhost:3000/welcome/show'; // 通常の遷移
         }
-        $.ajax({
-        url : "http://localhost:3000/welcome/count",
-        type : "get",
-        data : {key : count_value},
-        
-        dataType: "html",
-        });
-        
      };
      count_up_btn2.onclick = function (){
+        count_value += 1;
         count_value2 += 1;
         target4 = document.getElementById("output4");
         target5 = document.getElementById("output5");
         target6 = document.getElementById("output6");
-        
         if(count_value2 == 1){
             target4.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
-            count_value += 1;
         }
         else if(count_value2 == 2){
             target5.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
-            count_value += 1;
         }
         else if(count_value2 == 3){
             target6.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
-            count_value += 1;
-        }
-        else if(count_value2 >= 4){
-            count_value += 0;
         }
         if(count_value == 12){
             window.location.href = 'http://localhost:3000/welcome/show'; // 通常の遷移
         }
-        $.ajax({
-        url : "http://localhost:3000/welcome/count",
-        type : "get",
-        data : {key : count_value},
-        
-        dataType: "html",
-        });
-        
      };
      
      count_up_btn3.onclick = function (){
+        count_value += 1;
         count_value3 += 1;
         target7 = document.getElementById("output7");
         target8 = document.getElementById("output8");
         target9 = document.getElementById("output9");
-    
         if(count_value3 == 1){
             target7.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
-            count_value += 1;
         }
         else if(count_value3 == 2){
             target8.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
-            count_value += 1;
         }
         else if(count_value3 == 3){
             target9.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
-            count_value += 1;
-        }
-        else if(count_value3 >= 4){
-            count_value += 0;
         }
         if(count_value == 12){
             window.location.href = 'http://localhost:3000/welcome/show'; // 通常の遷移
         }
-        $.ajax({
-        url : "http://localhost:3000/welcome/count",
-        type : "get",
-        data : {key : count_value},
-        
-        dataType: "html",
-        });
-        
      };
 
      count_up_btn4.onclick = function (){
+        count_value += 1;
         count_value4 += 1;
         target10 = document.getElementById("output10");
         target11 = document.getElementById("output11");
         target12 = document.getElementById("output12");
-        
         if(count_value4 == 1){
             target10.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
-            count_value += 1;
         }
         else if(count_value4 == 2){
             target11.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
-            count_value += 1;
         }
         else if(count_value4 == 3){
             target12.innerHTML = "<img src = '<%= asset_path "img_eco_earth.jpg"%>' />";
-            count_value += 1;
-        }
-        else if(count_value4 >= 4){
-            count_value += 0;
         }
 
         if(count_value == 12){
             window.location.href = 'http://localhost:3000/welcome/show'; // 通常の遷移
         }
-
-        $.ajax({
-        url : "http://localhost:3000/welcome/count",
-        type : "get",
-        data : {key : count_value},
-        
-        dataType: "html",
-        });
-    
-        //var strCounter = String(count_value);
-        //var counter = document.getElementById("counter");
-        //localStorage.setItem('Key', strCounter );
-        //var value = localStorage.getItem('Key');
-        //counter.innerHTML = value;
-        //console.log(value)
-        
      };
-    
-     
-     
+
    
-};
-
-
-
+}; 
 </script>
-
-<%= link_to "今日はここまで！", welcome_show_path, method: :get %>
