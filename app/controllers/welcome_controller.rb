@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
   def index
+    @result = User.last
   end
 
   def show
@@ -7,6 +8,7 @@ class WelcomeController < ApplicationController
   end
 
   def count
+    
     @users = User.all
     @user = User.new(counter: params[:key])
     if @user.save

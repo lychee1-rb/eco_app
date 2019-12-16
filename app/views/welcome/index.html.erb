@@ -1,5 +1,6 @@
 <h1>With Eco Life -1st Stage -</h1>
 <p>あなたの今日のエコ活動をクリックしてください</p>
+<p>所有エコポイント：　<%= @result.counter %></p>
 <div class="cl1">
 <button id="btn_count_up1">
 <%= image_tag('setsuden_off.png',width: "300px") %>
@@ -56,7 +57,7 @@
 
 
 <script type="text/javascript">
-var count_value = 0;
+var count_value = <%= @result.counter %>;
 
 window.onload = function btnCountUp() {
 
@@ -65,7 +66,6 @@ window.onload = function btnCountUp() {
      var count_up_btn2 = document.getElementById("btn_count_up2");
      var count_up_btn3 = document.getElementById("btn_count_up3");
      var count_up_btn4 = document.getElementById("btn_count_up4");
-     var count_value = 0;
      var count_value1 = 0;
      var count_value2 = 0;
      var count_value3 = 0;
@@ -94,9 +94,7 @@ window.onload = function btnCountUp() {
         else if(count_value1 >= 4){
             count_value += 0;
         }
-        if(count_value == 12){
-            window.location.href = 'http://localhost:3000/welcome/show'; // 通常の遷移
-        }
+        
         $.ajax({
         url : "http://localhost:3000/welcome/count",
         type : "get",
@@ -127,9 +125,7 @@ window.onload = function btnCountUp() {
         else if(count_value2 >= 4){
             count_value += 0;
         }
-        if(count_value == 12){
-            window.location.href = 'http://localhost:3000/welcome/show'; // 通常の遷移
-        }
+        
         $.ajax({
         url : "http://localhost:3000/welcome/count",
         type : "get",
@@ -161,9 +157,7 @@ window.onload = function btnCountUp() {
         else if(count_value3 >= 4){
             count_value += 0;
         }
-        if(count_value == 12){
-            window.location.href = 'http://localhost:3000/welcome/show'; // 通常の遷移
-        }
+       
         $.ajax({
         url : "http://localhost:3000/welcome/count",
         type : "get",
@@ -194,10 +188,6 @@ window.onload = function btnCountUp() {
         }
         else if(count_value4 >= 4){
             count_value += 0;
-        }
-
-        if(count_value == 12){
-            window.location.href = 'http://localhost:3000/welcome/show'; // 通常の遷移
         }
 
         $.ajax({
